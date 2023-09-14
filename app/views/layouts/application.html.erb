@@ -1,22 +1,22 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <title>PiggyBanker</title>
-    <meta name="viewport" content="width=device-width,initial-scale=1">
-    <%= csrf_meta_tags %>
-    <%= csp_meta_tag %>
-    <%= stylesheet_link_tag "tailwind", "inter-font", "data-turbo-track": "reload" %>
+<html lang="en">
+<head>
+  <title>PiggyBanker</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <%= csrf_meta_tags %>
+  <%= csp_meta_tag %>
+  <%= stylesheet_link_tag "tailwind", "inter-font", "data-turbo-track": "reload" %>
 
-    <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
-    <%= javascript_importmap_tags %>
-  </head>
+  <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
+  <%= javascript_importmap_tags %>
+</head>
 
-  <body>
-  <p class="notice"><%= notice %></p>
-  <p class="alert"><%= alert %></p>
-
-  <main class="container mx-auto mt-28 px-5 flex">
-      <%= yield %>
-    </main>
-  </body>
+<body class="bg-gray-300">
+<%= render 'shared/navbar' %>
+<main class="mx-auto flex justify-start flex-col h-screen">
+  <p class="notice text-center text-green-700"><%= notice %></p>
+  <p class="alert text-center text-red-700"><%= alert %></p>
+  <%= yield %>
+</main>
+</body>
 </html>
