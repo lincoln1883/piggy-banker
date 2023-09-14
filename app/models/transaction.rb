@@ -4,5 +4,5 @@ class Transaction < ApplicationRecord
   validates :amount, presence: true, numericality: { greater_than: 1}
 
   belongs_to :category
-  belongs_to :user
+  belongs_to :author, class_name: 'User', primary_key: :user_id
 end
