@@ -1,7 +1,7 @@
 databases:
   - name: piggybank
-    databaseName: piggybank
-    user: piggybank_user
+    databaseName: piggybank_33gs
+    user: piggybank_33gs_user
 
 services:
   - type: web
