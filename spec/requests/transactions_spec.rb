@@ -2,7 +2,7 @@ require 'rails_helper'
 
 RSpec.describe TransactionsController, type: :request do
   let(:user) { create(:user) }
-  let(:category) { create(:category, user: user) }
+  let(:category) { create(:category, user:) }
 
   before do
     sign_in(user)
@@ -10,9 +10,9 @@ RSpec.describe TransactionsController, type: :request do
 
   describe 'GET /categories/:category_id/transactions' do
     it 'displays a list of transactions for a category' do
-      transaction1 = create(:transaction, category: category, user: user)
-      transaction2 = create(:transaction, category: category, user: user)
-      transaction3 = create(:transaction, category: category, user: user)
+      transaction1 = create(:transaction, category:, user:)
+      transaction2 = create(:transaction, category:, user:)
+      transaction3 = create(:transaction, category:, user:)
 
       get category_transactions_path(category)
 
@@ -22,7 +22,6 @@ RSpec.describe TransactionsController, type: :request do
       expect(response.body).to include(transaction3.name)
     end
   end
-
 
   describe 'GET /categories/:category_id/transactions/new' do
     it 'displays the new transaction form' do
