@@ -593,4 +593,7 @@
   <component name="SonarLintModuleSettings">
     <option name="uniqueId" value="caa4805e-51db-4219-90ea-5c64753678e5" />
   </component>
+  <component name="SonarLintModuleSettings">
+    <option name="uniqueId" value="b565202a-6052-477a-8b95-432603372d8f" />
+  </component>
 </module>
