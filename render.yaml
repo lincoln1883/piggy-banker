@@ -1,0 +1,18 @@
+databases:
+  - name: new-money
+    databaseName: new_money
+    user: new_money_user
+
+services:
+  - type: web
+    name: piggycoin
+    runtime: ruby
+    buildCommand: "./bin/render-build.sh"
+    startCommand: "bundle exec puma -C config/puma.rb"
+    envVars:
+      - key: DATABASE_URL
+        fromDatabase:
+          name: new-money
+          property: connectionString
+      - key: RAILS_MASTER_KEY
+        sync: false
