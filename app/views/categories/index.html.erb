@@ -19,7 +19,7 @@
   <!-- List categories here -->
 <% @categories.each do |category| %>
     <% if can? :manage, category %>
-      <%= link_to category_expenditures_path(category) do %>
+      <%= link_to category_expenditures_path(category.id) do %>
         <div class="flex flex-col">
           <!-- card -->
           <div v-for="card in cards" class="flex flex-row overflow-hidden
