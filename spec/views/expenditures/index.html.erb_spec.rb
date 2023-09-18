@@ -1,14 +1,14 @@
 require 'rails_helper'
 
-RSpec.describe 'transactions/index.html.erb', type: :view do
+RSpec.describe 'expenditures/index.html.erb', type: :view do
   include Devise::Test::ControllerHelpers
   let(:category) { create(:category, name: 'Test Category', icon: 'https://picsum.photos/200') }
 
   before(:each) do
     @category = category
-    @transactions = [
-      create(:transaction, name: 'Expenditure 1', category:),
-      create(:transaction, name: 'Expenditure 2', category:)
+    @expenditures = [
+      create(:expenditure, name: 'Expenditure 1', category:),
+      create(:expenditure, name: 'Expenditure 2', category:)
     ]
     render
   end
@@ -22,7 +22,7 @@ RSpec.describe 'transactions/index.html.erb', type: :view do
     sign_in user
     allow(view).to receive(:can?).and_return(true)
     render
-    expect(rendered).to have_link('Add a new transaction',
-                                  href: new_category_transaction_path(category_id: category.id))
+    expect(rendered).to have_link('Add a new expenditure',
+                                  href: new_category_expenditure_path(category_id: category.id))
   end
 end

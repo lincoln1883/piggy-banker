@@ -4,14 +4,14 @@ FactoryBot.define do
     icon { 'https://picsum.photos/200' }
     user
 
-    factory :category_with_transactions do
+    factory :category_with_expenditures do
       transient do
-        transactions_count { 3 }
+        expenditures_count { 3 }
       end
 
       after(:create) do |category, evaluator|
-        transactions = create_list(:transaction, evaluator.transactions_count, category:, user: category.user)
-        category.update(total_amount: transactions.sum(&:amount))
+        expenditures = create_list(:expenditure, evaluator.expenditures_count, category:, user: category.user)
+        category.update(total_amount: expenditures.sum(&:amount))
       end
     end
   end
