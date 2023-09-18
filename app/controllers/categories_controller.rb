@@ -2,7 +2,7 @@ class CategoriesController < ApplicationController
   before_action :authenticate_user!
   load_and_authorize_resource
   def index
-    @categories = Category.includes(:user, :transactions).all
+    @categories = Category.includes(:user, :expenditure).all
   end
 
   def new

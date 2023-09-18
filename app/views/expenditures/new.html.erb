@@ -4,7 +4,7 @@
       <i class="fa-solid fa-arrow-left-long fa-lg" style="color: white"></i>
     <% end %>
     <div class="flex justify-center items-center">
-      <h2 class="font-semibold text-center text-white uppercase">new transaction</h2>
+      <h2 class="font-semibold text-center text-white uppercase">new expenditure</h2>
     </div>
     <div class="md:block md:w-auto">
       <ul class="font-medium float-right">
@@ -21,12 +21,12 @@
       <div class="max-w-md mx-auto">
         <div class="divide-y divide-gray-200">
           <div class="py-8 text-base leading-6 space-y-4 text-gray-700 sm:text-lg sm:leading-7">
-            <%= form_with(model: [@category, @transaction], url: category_transactions_path(@category)) do |f| %>
-              <% if @transaction.errors.any? %>
+            <%= form_with(model: [@category, @expenditure], url: category_expenditures_path(@category)) do |f| %>
+              <% if @expenditure.errors.any? %>
                 <div class="alert alert-danger">
-                  <h2><%= pluralize(@transaction.errors.count, "error") %> prohibited this transaction from being saved:</h2>
+                  <h2><%= pluralize(@expenditure.errors.count, "error") %> prohibited this expenditure from being saved:</h2>
                   <ul>
-                    <% @transaction.errors.full_messages.each do |message| %>
+                    <% @expenditure.errors.full_messages.each do |message| %>
                       <li><%= message %></li>
                     <% end %>
                   </ul>

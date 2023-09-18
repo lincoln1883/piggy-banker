@@ -3,9 +3,9 @@ class Category < ApplicationRecord
   validates :icon, presence: true
 
   belongs_to :user
-  has_many :transactions
+  has_many :expenditure, dependent: :destroy
 
   def total_amount
-    transactions.sum(:amount)
+    expenditure.sum(:amount)
   end
 end

@@ -1,6 +1,6 @@
 FactoryBot.define do
-  factory :transaction do
-    sequence(:name) { |n| "Transaction #{n}" }
+  factory :expenditure do
+    sequence(:name) { |n| "Expenditure #{n}" }
     amount { Faker::Number.decimal(l_digits: 2) }
     category
     user

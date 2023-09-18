@@ -37,8 +37,8 @@ RSpec.describe TransactionsController, type: :request do
       post category_transactions_path(category), params: { transaction: transaction_attributes }
 
       expect(response).to redirect_to(categories_path)
-      expect(flash[:notice]).to eq('Transaction created successfully.')
-      expect(Transaction.last.name).to eq(transaction_attributes[:name])
+      expect(flash[:notice]).to eq('Expenditure created successfully.')
+      expect(Expenditure.last.name).to eq(transaction_attributes[:name])
     end
   end
 end

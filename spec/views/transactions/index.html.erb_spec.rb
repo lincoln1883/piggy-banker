@@ -7,8 +7,8 @@ RSpec.describe 'transactions/index.html.erb', type: :view do
   before(:each) do
     @category = category
     @transactions = [
-      create(:transaction, name: 'Transaction 1', category:),
-      create(:transaction, name: 'Transaction 2', category:)
+      create(:transaction, name: 'Expenditure 1', category:),
+      create(:transaction, name: 'Expenditure 2', category:)
     ]
     render
   end
@@ -17,7 +17,7 @@ RSpec.describe 'transactions/index.html.erb', type: :view do
     expect(rendered).to have_selector('h2', text: 'Test Category')
   end
 
-  it 'displays "Add a New Transaction" link for authorized users' do
+  it 'displays "Add a New Expenditure" link for authorized users' do
     user = create(:user)
     sign_in user
     allow(view).to receive(:can?).and_return(true)
