@@ -27,7 +27,12 @@ class ExpendituresController < ApplicationController
   def destroy
     @category = Category.find(params[:category_id])
     @expenditure = @category.expenditure.find(params[:id])
-    @expenditure.destroy
+    if @expenditure.destroy
+      redirect_to categories_path, notice: 'Expenditure deleted successfully.'
+    else
+      flash[:alert] = 'Expenditure could not be deleted.'
+      render 'index'
+    end
   end
 
   private
